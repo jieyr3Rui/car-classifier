@@ -10,7 +10,7 @@ d = load_data.load_data()
 optimizer = torch.optim.SGD(net.parameters(), lr=0.01, momentum=0.9)
 loss_function = torch.nn.CrossEntropyLoss()
 losses = []
-for epoch in range(500):
+for epoch in range(50):
     running_loss = 0.0
     for ii, train_data in enumerate(d):
         data = train_data[0].cuda()
@@ -29,5 +29,6 @@ for epoch in range(500):
     losses.append(loss_step)
     print('epoch: %4d, loss = %.3f' % (epoch, float(loss_step)))
 
+print('finish training')
 PATH = './car_classifier_net.pth'
 torch.save(net.state_dict(), PATH)
