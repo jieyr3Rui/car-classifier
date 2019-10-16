@@ -2,7 +2,7 @@ import os
 import re
 from PIL import Image
 import torch
-import torch.utils.data as data
+import torch.utils.data as data 
 import numpy
 
 
